@@ -7,14 +7,14 @@ services:
          - '80'
         labels:
           - "traefik.enable=true"
-          - "traefik.http.routers.lewdchat-frontend.entrypoints=web"
-          - "traefik.http.routers.lewdchat-frontend.rule=Host(`random.lewdchat.com`)"
-          - "traefik.http.routers.lewdchat-frontend.middlewares=redirect-to-https@docker"
-          - "traefik.http.routers.lewdchat-frontend-secure.entrypoints=websecure"
-          - "traefik.http.routers.lewdchat-frontend-secure.rule=Host(`random.lewdchat.com`)"
-          - "traefik.http.routers.lewdchat-frontend-secure.tls=true"
-          - "traefik.http.routers.lewdchat-frontend-secure.tls.certresolver=letsencryptresolver"
-          - "traefik.http.services.lewdchat-frontend.loadbalancer.server.port=80"
+          - "traefik.http.routers.random-frontend.entrypoints=web"
+          - "traefik.http.routers.random-frontend.rule=Host(`random.random.com`)"
+          - "traefik.http.routers.random-frontend.middlewares=redirect-to-https@docker"
+          - "traefik.http.routers.random-frontend-secure.entrypoints=websecure"
+          - "traefik.http.routers.random-frontend-secure.rule=Host(`random.random.com`)"
+          - "traefik.http.routers.random-frontend-secure.tls=true"
+          - "traefik.http.routers.random-frontend-secure.tls.certresolver=letsencryptresolver"
+          - "traefik.http.services.random-frontend.loadbalancer.server.port=80"
           - "traefik.docker.network=traefik"
         networks:
           - traefik
