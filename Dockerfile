@@ -13,8 +13,11 @@ RUN npm install
 # Copy the rest of the application code to the working directory
 COPY . .
 
-# Build the React app
-RUN npm run build
+# Print the current directory structure for debugging
+RUN ls -al /app
+
+# Build the React app with detailed logging
+RUN npm run build --verbose
 
 # Use a light-weight web server to serve the static files
 FROM nginx:alpine
